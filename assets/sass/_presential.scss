@@ -1,0 +1,45 @@
+/*Presential module*/
+$accent: #3f51b5;
+$hue:rgba(63,81,181,.5);
+
+@include phone {
+  md-toast{
+    display: block;
+  }
+}
+
+.presential {
+
+	@include phone {
+		.mdl-switch__label {
+			display: none;
+		}
+
+    md-toast{
+      display: block;
+    
+      .md-toast-content {
+        min-height: 38px;
+        padding: 3px;
+        font-size: 0.9em;
+        line-height: 0.9em;
+      }
+    }
+	}
+
+  .partners {
+    line-height: 24px;
+  }
+
+  //Overwrite angular md theme
+  md-switch.md-default-theme.md-checked .md-bar, md-switch.md-checked .md-bar{
+    background-color: $hue;
+  }
+  md-switch.md-default-theme.md-checked .md-thumb, md-switch.md-checked .md-thumb {
+    background-color: $accent;
+  }
+  md-switch {
+    margin: 0;
+  }
+ 
+}

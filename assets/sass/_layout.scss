@@ -1,0 +1,111 @@
+// ==========================================================================
+// SMACSS - Layout Scss
+// Generally, a Layout style only has a single selector: a single ID or class name
+// https://smacss.com/book/type-layout
+// ==========================================================================
+$deg : 25;
+$header-title-font-size : 22px;
+
+//On phone, there are white space at the top, we force Wp Admin bar to stay at the toUpperCase
+//... check in php if the user is logged
+
+// @media screen and (max-width: 600px) {
+// 	html {
+// 		margin-top: 0!important;
+// 	}
+// 	.mdl-layout__container {
+// 		margin-top: 46px
+// 	}
+// }
+
+main#content{
+	overflow: visible;
+	padding: 5px;
+	h1 {
+		color : $secondary;
+		font-size: $header-title-font-size;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+
+	/* Responsive Phone */
+	@include phone {
+		margin:0;
+		margin-left:0px;
+	}
+	@include desktop { 
+		margin:0 auto;
+		width: 1024px
+	}
+}
+
+section#bottom-banner {
+	position: relative;
+	background-color: $secondary;
+	padding:35px;
+
+	ul.social {
+		display: block;
+		color: $primary;
+		margin: 20px auto;
+		li {
+			line-height: 20px;
+			margin-bottom: 20px;
+			font-weight: 200;
+			a {
+				text-decoration: none;
+				color: $primary;
+			}
+			div {
+				font-weight: 500;
+			}
+		}
+
+		img {
+			float: left;
+			margin-right: 15px;
+			z-index: 1000;
+		}
+	}
+
+	#banner-image {
+		position: absolute;
+		right: 5%;
+		bottom: 0%;
+		width:25%;
+		img {
+			width : 100%;
+		}
+	}
+
+	/*Phone Rules*/
+	@include phone {
+		padding: 0px;
+		margin: 0;
+		#banner-image {
+			position: inherit;
+			margin-bottom: 20px;
+			float: right;
+			width: 45px;
+		}
+  }
+}
+
+footer{
+	text-align: center;
+	h1 {
+		color : $secondary;
+		font-size: $header-title-font-size;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+}
+
+footer#credits {
+	background-color: $secondary;
+	a {
+		text-decoration: none;
+		color:inherit;
+		margin-right: 10px;
+	}
+}

@@ -1,0 +1,9 @@
+<div class="match-details">
+    <div class="affiche">
+        <span class="date">{{ $ctrl.match.friendlyMatchDate.format('ll') }}</span>
+        <div class="match-details__teams"><b>{{$ctrl.match.match_team_dom}}</b> vs <b>{{$ctrl.match.match_team_ext}}</b></div> 
+        <div class="label place"><i class="fa {{ ($ctrl.match.place == 'Exterieur' ) ? 'fa-bus' : 'fa-home' }}" aria-hidden="true"></i>{{$ctrl.match.place}}</div>
+    </div>
+    <div class="rdv-hours"><i class="fa fa-clock-o" aria-hidden="true"></i> Rendez-vous à la salle : {{$ctrl.match.match_team_time}} </div>
+    <div class="match-hours"><i class="fa fa-calendar" aria-hidden="true"></i> Heure de match : {{$ctrl.match.match_real_time}} </div> 
+</div>

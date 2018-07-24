@@ -1,0 +1,86 @@
+/*
+ * Team Builder : Players picker component 
+ */
+
+ #search {
+     display: inline-block;
+    border-radius: 18px;
+    border: 1px solid $outline;
+    margin: 10px;
+    padding: 7px;
+    
+    i {
+        padding-right: 5px; 
+    }
+    input {
+        border: none;
+        outline-width: 0;
+    }
+ }
+
+ .players-list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+
+     li {
+        border-top: 1px solid $outline;
+        padding: 15px;
+        
+        .avatar { 
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            background-color: #eeeeee;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        div {
+            display: inline-block;
+            float: left;
+        }
+        .positions {
+            float:left;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            li {
+                float: left;
+            
+                &.label {
+                    margin: 0px 3px;
+                    padding: 1px 5px;
+                    font-size: 10px;
+                }
+                &.Pivot {
+                    background-color: $firstChild;
+                }
+                &.Gauche {
+                    background-color: $secondChild;
+                }
+                &.Droit {
+                    background-color: $exterieur;
+                }
+                &.Demi-Centre {
+                    background-color: $date;
+                }
+                &.Gardien {
+                    background-color: $primary;
+                }
+
+            }
+        }
+        .action {
+            text-align: center;
+            height: 45px;
+            float: right;
+            padding-top: 10px;
+        }
+
+        &.selected {
+            background-color: $outline;
+        }
+    }
+    
+ }
+

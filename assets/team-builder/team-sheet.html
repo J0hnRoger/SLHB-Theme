@@ -1,0 +1,17 @@
+<aside class="team-sheet">
+	<header>
+<h6>Feuille de match</h6>
+</header>
+	 <ul class="players-list">
+        <li ng-repeat="player in $ctrl.teamSheet" ng-class="{ me : ($ctrl.currentUserId == player.ID) }" class="clearfix" >
+          <div class="avatar" style="background:url( {{player.profilePicture}}) center / cover">
+            </div>
+            <div>{{player.display_name}}</div>
+            <div class="action" ng-show="$ctrl.showControls">
+                <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="$ctrl.onPlayerClicked( {$event : { player : player } } )">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </li>
+    </ul>
+</aside>

@@ -1,0 +1,16 @@
+/* Last Results Widget - Home Header*/
+#widget-last-results {
+	margin: 0 auto;
+	text-align: center;
+	h3{
+		font-size: 16px;
+		margin:0;
+	}
+	.results {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	@include phone {
+
+	}
+}

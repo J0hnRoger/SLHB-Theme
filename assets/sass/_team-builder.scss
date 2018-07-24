@@ -1,0 +1,112 @@
+/*
+ *  Team Builder Module
+ */
+$fontColor: #534d51;
+$outline: #f0f0f0;
+$primary: #1d3d86;
+$exterieur:#fe6f61;
+$date: #6fcadc;
+ 
+$firstChild :#6abb5c;
+$secondChild :#f79f33;
+$thirdChild :#a788fd;
+$selected: #f6f7f9;
+
+.team-builder {
+    background-color: #ffffff;
+    width: 1050px;
+    h6 {
+        font-weight: 600; 
+        line-height: inherit;
+        margin: 0; 
+    }
+    .label{
+        display: inline-block;
+        font-size: 12px;
+        background-color: $outline;
+        text-transform: uppercase;
+        color: #ffffff;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    & > header {
+      
+        aside{
+            width: 250px;
+        }
+        .players-picker {
+            width: 650px;
+        }
+    }
+
+    .column {
+        border-top: 1px solid $outline;
+        float:left;
+        height: 100%;
+    }
+    .left {
+        width: 200px;
+    }
+    .center {
+        border: 1px solid $outline;
+        border-bottom: none;
+        width:550px;
+    }
+    .right{
+        width:300px;
+        header {
+            padding: 18px;
+        }
+    }
+    footer{
+        width: 100%;
+        border-top: 1px solid $outline;
+        text-align: right;
+        padding: 15px;
+    }
+
+}
+
+.match-details {
+    color: $fontColor;
+    padding:33px;
+
+    .affiche {
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+        .date {
+            padding: 7px 12px;
+            margin-right: 10px;
+            border-radius: 18px;
+            color : #ffffff;
+            background-color: $date;
+        }
+        i{
+            margin-right: 5px;
+        }
+    }
+
+    .label{
+        display: inline-block;
+        font-size: 12px;
+        background-color: $outline;
+        text-transform: uppercase;
+        color: #ffffff;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .place {
+        background-color: white;
+        border: 1px solid $fontColor;
+        color:$fontColor;
+        font-weight: 500;
+    }
+}
+
+.match-details__teams {
+    margin: 20px 0;
+    font-size: 20px;
+}

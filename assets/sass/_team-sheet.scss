@@ -1,0 +1,19 @@
+/*
+ * Team Builder : Team Sheet component 
+ */
+
+.team-sheet {
+    i {
+        font-size: 19px;
+        vertical-align: middle;
+        line-height: 32px;
+    }
+    .players-list li .action {
+        padding: 10px;
+        margin-right: 15px;
+    }
+
+    .players-list li.me {
+       background-color: rgba(138, 194, 73, 0.2);;     
+    }
+}

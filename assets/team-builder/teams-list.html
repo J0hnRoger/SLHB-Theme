@@ -1,0 +1,6 @@
+<aside class="teams-list">
+	<h6>Vos Equipes</h6>
+	<ul>
+		<li ng-init="$ctrl.teams[0].selected = true" ng-repeat="team in $ctrl.teams" ng-class="{ selected : team.selected }" ng-click="$ctrl.onClick(team)">{{team.post_title}}</li>
+	</ul>
+</aside>

@@ -1,0 +1,25 @@
+<div class="players-picker">
+    <section id="search">
+        <label for="search-input"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Chercher un joueur</span></label>
+        <input id="search-input" class="" placeholder="Entrer le nom d'un joueur" autocomplete="off" spellcheck="false" autocorrect="off" tabindex="1">
+        <a id="search-clear" href="#" class="fa fa-times-circle hide" aria-hidden="true"><span class="sr-only">Clear search</span></a>
+    </section>
+
+    <ul class="players-list">
+        <!-- Player row -->
+        <li ng-repeat="player in $ctrl.pool" class="clearfix">
+            <div class="avatar" style="background:url( {{player.profilePicture}}) center / cover">
+            </div>
+            <div>{{player.display_name}}</div>
+            <ul class="positions"> 
+                <li ng-repeat="position in player.positions" class="label {{position}}">{{position}}</li>
+            </ul>
+            <div class="action">
+               <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="$ctrl.onClick(player)">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </li>
+        <!-- End Player row -->
+    </ul>
+</div>

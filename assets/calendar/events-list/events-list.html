@@ -1,0 +1,15 @@
+<!-- <span id="btn-navigation" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-button--mini-fab count">{[vm.calendarService.getSelectedEvents().length]}</span> -->
+
+<div class="mdl-shadow--2dp">
+  <div class="header mdl-shadow--3dp">
+    <h6>Au programme, ce mois de <span class=" month-name"> {[vm.calendarService.monthName]} <span></h6>
+  </div>
+  <ul class="events">
+    <li ng-repeat="event in vm.calendarService.getSelectedEvents()" ng-click="vm.details(event.ID)">
+      <div class="hour">{[event.formatedDate]}
+        <span ng-if="event.startTime"> à partir de {[event.startTime]}</span>
+      </div>
+      <div class="descr purple">{[event.title]}</div>
+    </li>
+  </ul>
+</div>

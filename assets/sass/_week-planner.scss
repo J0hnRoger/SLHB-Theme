@@ -1,0 +1,34 @@
+/* ==|====================
+   Module/WeekPlanner
+   ======================= */
+$primary : red;
+$secondary : #fff;
+$font-color : black; 
+
+.week-planner {
+    // Box
+    // Border: 
+    // Background:
+    // Text
+    // Other
+    display: flex;
+    justify-content: space-between;
+
+    &__day-column {
+        width:200px;
+    }
+
+    &__day-header {
+        flex-grow: 1;
+    }
+
+    &__day-content {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    &__hour-block{
+        height: 50px; 
+    }
+}
+

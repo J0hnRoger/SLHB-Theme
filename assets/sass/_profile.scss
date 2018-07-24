@@ -1,0 +1,66 @@
+$profileImgSize : 135px;
+$coachProfileImgSize : 75px;
+$player-pills-color : #E91E63;
+#profile {
+  .mdl-grid {
+    padding: 0;
+    aside.profile-column {
+      @include box_shadow(1);
+      margin: 0;
+      padding: 15px;
+      h2 {
+        text-align: center;
+      }
+      .avatar {
+        @include roundedImg($profileImgSize);
+        margin: 20px auto;
+      }
+      .infos {
+        text-align: center;
+      }
+      @include phone {
+        width: 100%;
+      }
+    }
+
+    // Match Composition panel
+      .match-header {
+        margin: 15px;
+        text-align: center;
+        h2 {
+          color: $subInfoColor;
+        }
+        h1 {
+          margin: 0;
+          color: $secondary;
+          font-size: 30px;
+        }
+      }
+      //TeamSheet
+      .players-list {
+        .label-pills {
+          background-color: $player-pills-color;
+        }
+      }
+    }
+  }
+
+#profile.coach-profile {
+  .mdl-grid {
+    aside.profile-column{
+      .avatar {
+      @include roundedImg($coachProfileImgSize);
+        margin: 20px auto;
+      }
+
+      .player-presents{ 
+        margin: 25px 0;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

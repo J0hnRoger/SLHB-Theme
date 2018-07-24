@@ -1,0 +1,24 @@
+<div class="team-builder">
+	<header>
+		<div ng-show="root.noMatch">
+			<h5>Pas de match de planifié pour le moment</h5>
+		</div>
+		<match-details ng-hide="root.noMatch" match="root.match"></match-details>
+	</header> 
+	<content class="clearfix">
+		<aside class="column left"> 
+			<teams-list teams="root.teams" on-team-selected="root.loadNextMatch($event.team)"></teams-list>
+		</aside>
+		<div class="column center">
+			<players-picker pool="root.pool.pool" on-player-clicked="root.addPlayerToTeamSheet($event.player)"></players-picker>
+		</div>
+		<div class="column right">
+			<team-sheet team-sheet="root.match.teamSheet" on-player-clicked="root.removePlayerToTeamSheet($event.player)" edit="true"></team-sheet>
+		</div>
+	</content>
+	<footer>
+		<button class="mdl-button mdl-js-button mdl-button--raised" ng-click="root.saveTeamSheet()">
+			Sauvegarder
+		</button>
+	</footer>
+</div>

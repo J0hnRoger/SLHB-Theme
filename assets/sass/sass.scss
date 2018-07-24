@@ -1,0 +1,28 @@
+// ==========================================================================
+// SMACSS - is becoming one of the most useful contributions to front-end discussions in years
+// Every project needs some organization
+// https://smacss.com/book/categorizing
+// ==========================================================================
+@import 'reset';
+@import 'theme';
+@import 'base';
+@import 'layout';
+@import 'module';
+
+@import 'header';
+@import 'agenda';
+@import 'actualites';
+@import 'contact';
+@import 'organigram';
+@import 'profile';
+@import 'team';
+@import 'presential';
+@import 'lastresults';
+@import 'material_btn';
+
+@import 'team-builder' ;
+@import 'player-pickers' ;
+@import 'teams-list' ;
+@import 'team-sheet' ;
+@import 'convoc' ;
+@import 'week-planner' ;

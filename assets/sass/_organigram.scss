@@ -1,0 +1,43 @@
+/*
+  Organigramme component
+ */
+
+//Blocks
+
+.the-crew {
+  padding: 0;
+  &__item {
+    float: left;
+    margin: 25px 20px;
+    width: 285px;
+
+    @include phone {
+      margin: 15px 0px;
+      width: 350px;
+    }
+  }
+
+  &__avatar {
+      float: left;
+      @include roundedImg(70px);  
+      @include phone {
+        @include roundedImg(65px);
+      }
+      @include clearfix
+      
+    }
+    
+    &__infos {
+      margin: 0 15px;
+      float: left;
+      color : $secondary;
+      @include clearfix
+      
+    }
+    
+  @include clearfix
+}
+
+.after-trombi {
+  margin: 25px 0;
+}

@@ -1,0 +1,26 @@
+<div class="custom-calendar-wrap">
+  <div id="custom-inner" class="custom-inner">
+      <div class="custom-header clearfix">
+          <nav>
+              <span id="custom-prev" class="custom-prev" ng-click="vm.prev()"></span>
+              <span id="custom-next" class="custom-next" ng-click="vm.next()"></span>
+          </nav>
+          <h2 id="custom-month" class="custom-month">{[vm.CalendarService.monthName]}</h2>
+          <h3 id="custom-year" class="custom-year">{[vm.CalendarService.year]}</h3>
+      </div>
+      <div id="calendar" class="fc-calendar-container">
+        <div class="fc-calendar fc-five-rows">
+          <div class="fc-head">
+            <div>Lun</div><div>Mar</div><div>Mer</div><div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div></div>
+            <div class="fc-body">
+              <div class="fc-row" ng-repeat='week in vm.CalendarService.weeks' >
+                <div ng-repeat='day in week' ng-class="vm.getClass(day)" ng-click="vm.selectDate(day)">
+                  <span ng-class="day.notThisMonth ? 'fc-emptydate' : ''" class="fc-date">{[day.number]}</span>
+                  <span class="fc-weekday">Mon</span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

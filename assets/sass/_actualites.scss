@@ -1,0 +1,187 @@
+/*
+ Module : Actualites
+*/
+$titleColor : rgba(0, 0, 0, 0.87);
+$subInfoColor : #767676;
+
+.actualites {
+  .actualite {
+    float: left;
+    margin: 0 25px 20px 20px;
+    width: 430px;
+    height: 250px;
+    overflow: hidden; 
+    @extend %cf;
+
+    & > img{
+      width: 200px;
+      height: auto;
+      margin: 0;
+    }
+    &-content{
+      margin: 0 0 0 20px;
+      width: 210px;
+      float: right;
+
+    }
+
+    a {
+      @include read-more;
+    }
+
+    /* Responsive rules */
+
+    @include phone {
+      width: 80%;
+      margin: 10%;
+      padding: 5px;
+      height: auto;
+      text-align: center;
+
+      & > img {
+        width: 200px;
+        height: auto;
+      }
+      &-content{
+        margin: 5px;
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      width: 560px;
+      & > img {
+        width: 240px;
+      }
+      &-content{
+        width: 290px;
+      }
+    }
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    width: 700px;
+    &-content{
+      margin: 20px;
+    }
+  }
+
+  @include desktop {
+    margin: 0 auto;
+    width: 960px;
+  }
+}
+
+/* Actu Details */
+main#content{
+  .details-actualite {
+    width: 660px;
+    padding: 20px;
+    margin: 0 auto;
+    header {
+      h1 {
+        text-transform: none;
+        font-weight: 700;
+        font-size: 35px;
+        color: $secondary;
+        margin-bottom: 0;
+      }
+      .sub-infos {
+        text-transform:uppercase;
+        color:$subInfoColor;
+      }
+    }
+    section {
+      margin-top: 45px;
+    }
+    .fb-share-button {
+      margin-top: 25px;
+    }
+  }
+}
+
+.related{
+  background-color: $secondary;
+  padding: 0;
+  margin: 0;
+  margin-top: 5rem;
+
+  .related-center {
+    width: 100%;
+    margin: 0 auto;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+
+    a.read-next-story {
+      text-decoration: none;
+      position: relative;
+      text-align: center;
+      color: #fff;
+      background: $secondary no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+      float: left;
+      width: 50%;
+      height: 100%;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.7);
+        transition: all 0.5s ease;
+      }
+
+      &:hover:before {
+          background: rgba(0,0,0,0.8);
+          transition: all 0.2s ease;
+      }
+
+      &:hover .post:before {
+          color: #222;
+          background: #fff;
+          transition: all 0.2s ease;
+      }
+
+      .post{
+        position: relative;
+        width: 80%;
+        margin: 1rem auto;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        &:before {
+            content: "A lire ensuite";
+            padding: 4px 10px 5px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-family: "Open Sans", sans-serif;
+            color: rgba(255,255,255,0.8);
+            border: rgba(255,255,255,0.5) 1px solid;
+            border-radius: 4px;
+            transition: all 0.5s ease;
+        }
+
+        h2 {
+          margin-top: 10px;
+          color: $primary;
+          font-weight: bold;
+          font-size: 28px;
+          text-align: center;
+        }
+
+        p{
+          padding: 20px 0;
+          color: rgba(255,255,255,0.8);
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

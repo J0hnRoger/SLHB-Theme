@@ -1,0 +1,43 @@
+/*
+ * Team Builder : Teams List component 
+ */
+
+.teams-list {
+    h6 {
+        padding: 18px;
+    }
+    ul{
+        padding: 10px;
+        font-size: 12px;
+        text-decoration: none;
+        list-style: none;
+        
+        li {
+            line-height: 30px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            
+            &:before {            
+                content: "• ";
+                font-size: 18px;
+            }
+            &:first-child:before {
+                color: $firstChild;
+            }
+            &:nth-child(2):before {
+                color: $secondChild;
+            }
+            &:nth-child(3):before {
+                color: $thirdChild;
+            }
+
+            &.selected {
+                background-color: $selected;
+                font-weight: 600;
+            }
+            &:hover {
+               cursor: pointer; 
+            }
+        }
+    }
+}

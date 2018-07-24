@@ -1,0 +1,24 @@
+
+  <!-- <a id="btn-navigation" href="#/" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect count back"><i class="material-icons">arrow_back</i></a> -->
+  <div class="mdl-tooltip" for="btn-navigation">
+     Retour à la liste d'évènements
+  </div>
+  <div class="event-details">
+      <div class="cover mdl-shadow--3dp" style="background : url({[vm.event.featured_image[0]]}) top / cover no-repeat;" alt="">
+        <div class="header-content">
+          <h1>{[vm.event.title]}</h1>
+          <div class="date">{[vm.event.formatedDate]}</div>
+          <div ng-show="vm.event.startTime" class="date">à partir de {[vm.event.startTime]}</div>
+          <div ng-show="vm.event.endTime" class="date">jusqu'à {[vm.event.endTime]}</div>
+        </div>
+      </div>
+
+      <div class="mdl-grid carousel mdl-shadow--2dp" ng-show="vm.event.post_gallery.length > 0">
+        <div ng-repeat="url in vm.event.post_gallery" style="background-image : url({[url]});background-position:top" > </div>
+        <!-- <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:right" > </div> -->
+        <div class="more-pictures" ng-show="vm.event.post_gallery.length >= 3"> <h1>+{[vm.event.post_gallery.length - 3]}</h1> Photos</div>
+        <!-- <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:center" ></div> -->
+      </div>
+      <div class="event-content" ng-bind-html="vm.event.content">
+      </div>
+    </div>

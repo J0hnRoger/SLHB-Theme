@@ -1,0 +1,27 @@
+/**
+ * Player convocation - mobile first
+ **/
+
+.convoc {
+    @include phone {
+        display:flex;
+        flex-direction: column;
+
+        .affiche {
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            padding: 5px;
+
+            font-size: 1.2em;
+            .place {
+                margin-top: 10px;
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+
