@@ -34,36 +34,20 @@ class HomeController extends BaseController
         );
 
         if ($currentUser->isPlayer || $currentUser->isCoach) {
-
             UserModel::LoadNextMatch($currentUser);
-
         }
 
         return \View::make('home.home-content')->with($viewParams);
-
     }
-
-
 
     public function getSingleActualite()
-
     {
-
-      return View::make('actualites.single')->with(array(
-
+      return \View::make('actualites.single')->with(array(
         'actu' => PostModel::getCurrent(),
-
         'next_post' => get_next_post(),
-
         'previous_post' => get_previous_post(),
-
         'home_banner' =>  themosis_assets() . "/images/_Actu_Header01.jpg"
-
       ));
-
     }
-
-
-
 }
 
