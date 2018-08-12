@@ -32,7 +32,6 @@
       </div>
 
         @if($currentUser->user_login != false)
-
         <div id="login" class="login mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-grid">
           <div class="user-information">
             <h5>Bonjour {{ $currentUser->user_login }}</h5>
@@ -53,10 +52,7 @@
 
           <div class="photo mdl-cell mdl-cell--1-col-phone">
 
-            <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
-
-            </div>
-
+            <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover" ></div>
           </div>
 
         </div>
@@ -64,7 +60,6 @@
         @else
 
         <div id="login" class="login mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-grid">
-    {{ $login_url }}
           <a id="login-link" class="mdl-cell--3-col-phone " href="{{$login_url}}/cms/wp-login.php?redirect_to={{ $login_url }}">
 
              <i class="fa fa-sign-in"></i><span class="mdl-cell--hide-phone">Connectez-vous avec votre compte SLHB</span>

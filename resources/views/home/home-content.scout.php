@@ -20,9 +20,9 @@
 @foreach($actus as $i => $actu)
 	<article class="actualite">
 		@if (has_post_thumbnail($actu->ID))
-		{{  get_the_post_thumbnail($actu->ID) }}
+		<?php echo get_the_post_thumbnail($actu->ID) ?>
 		@else
-		<img src="{{  $actu_default_image }}" alt="" />
+		<img src="{{$actu_default_image}}" alt="" />
 		@endif
 		<div class="actualite-content">
 			<h2 >{{$actu->post_title}}</h2>

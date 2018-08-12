@@ -27,7 +27,7 @@
        */
       protected function fieldType()
       {
-          $this->type = 'text';
+          $this->type = 'hour';
       }
 
       /**

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/content/themes/SLHB/assets/css/styles.css">
     <!-- endinject -->
 </head>
-<body ng-app="appHand">
+<body>
 <div class="mdl-layout mdl-js-layout mdl-grid--no-spacing">
 	@section('header')
 		@include('layouts.header-min')

@@ -22,26 +22,24 @@ class UserModel {
 
       UserModel::SetProfilePhoto($user);
 
-        if (UserModel::hasTheRole($user->ID, 'slhb_player')) {
-            $user->isPlayer = true;
-            UserModel::bindPlayerMeta($user);
-        }
+      if (UserModel::hasTheRole($user->ID, 'slhb_player')) {
+          $user->isPlayer = true;
+          UserModel::bindPlayerMeta($user);
+      }
 
-        if (UserModel::hasTheRole($user->ID, 'slhb_coach'))
-        {
-            $user->isCoach = true;
-        }
+      if (UserModel::hasTheRole($user->ID, 'slhb_coach'))
+      {
+          $user->isCoach = true;
+      }
 
-        if (UserModel::hasTheRole($user->ID, 'slhb_direction'))
+      if (UserModel::hasTheRole($user->ID, 'slhb_direction'))
 
-        {
+      {
 
-            $user->isDirection = true;
+          $user->isDirection = true;
 
-        }
-
+      }
       return $user;
-
     }
 
     public static function getUserById($id){
@@ -243,20 +241,17 @@ class UserModel {
 
     }
 
-
-
     public static function SetProfilePhoto($user){
-
-      $profilePicture = get_cupp_meta($user->ID, 'thumbnail');
+      $profilePicture = null;
+      if (!empty($user->ID)) {
+        $profilePicture = get_cupp_meta($user->ID, 'thumbnail');
+      }
 
       if (empty($profilePicture)){
-
         $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
-
       }
 
       $user->profilePicture = $profilePicture;
-
     }
 
     public static function LoadNextMatch($player) {

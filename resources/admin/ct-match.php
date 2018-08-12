@@ -1,5 +1,6 @@
 <?php
 use Theme\Models\TeamModel;
+
 /*-----------------------------------------------------------------------*/
 // Match Custom Post
 /*-----------------------------------------------------------------------*/
@@ -22,28 +23,26 @@ $match = \PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 ));
 
 /*-----------------------------------------------------------------------*/
-
 // Match informations
-
 /*-----------------------------------------------------------------------*/
 
-$propertiesRendezvous = [
-            'features'  => ['title' => 'Heure du rendez-vous'],
-            'attrs'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text'], ['primaryColor' => '#1d3d86']),
-            'name'      => 'match_team_time',
-            'internal'  => 'match_team_time'
-        ];
+$propertiesApointment = [
+    'features'  => ['title' => 'Heure du rendez-vous'],
+    'attrs'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text'], ['primaryColor' => '#1d3d86']),
+    'name'      => 'match_team_time',
+    'internal'  => 'match_team_time'
+];
 
 $propertiesMatchTime = [
-            'features'  => ['title' => 'Heure du match'],
-            'attrs'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
-            'name'      => 'match_real_time',
-            'internal'  => 'match_real_time'
-        ];
+    'features'  => ['title' => 'Heure du match'],
+    'attrs'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
+    'name'      => 'match_real_time',
+    'internal'  => 'match_real_time'
+];
 
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),
-    Field::make('Addons\Fields\TimeField', $propertiesRendezvous),
+    Field::make('Addons\Fields\TimeField', $propertiesApointment),
     Field::make('Addons\Fields\TimeField', $propertiesMatchTime),
     Field::select('match_team_dom', TeamModel::getTeamsArray(), ['title' => 'Equipe Chavagnaise']),
     Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur'], ['class' => 'simple-text']),
